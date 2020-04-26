@@ -1,4 +1,4 @@
-
+import java.util.Random;
 public class Person {
 	private gender gender;
 	private boolean infected;
@@ -55,4 +55,30 @@ public class Person {
 		this.keyWorker = keyWorker;
 	}
 	
+	public void generatePerson() {
+		Random rand = new Random();
+		double randomDouble = rand.nextDouble();
+		
+		if(randomDouble <= 0.5) {
+			this.gender = gender.Male;
+		}else {
+			this.gender = gender.Female;
+		}
+		
+		randomDouble = rand.nextDouble();
+		
+		if(randomDouble < 0.2) {
+			this.keyWorker = true;
+		}else {
+			this.keyWorker = false;
+		}
+		
+		randomDouble = rand.nextDouble();
+		
+		if(randomDouble < 0.2) {
+			this.highRisk = true;
+		}else {
+			this.highRisk = false;
+		}
+	}
 }
